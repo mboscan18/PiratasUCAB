@@ -5,7 +5,9 @@
  */
 package PiratasGUI;
 
-import java.awt.MenuBar;
+import AppPackage.AnimationClass;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,7 +19,11 @@ public class PiratasGUI extends javax.swing.JFrame {
      */
     public PiratasGUI() {
         initComponents();
+
+        this.setContentPane(new FondoPanel("/images/playa.png"));
         this.setBounds(0, 0, 1366, 768);
+
+//        this.add(barcoPiratainf);
     }
 
     /**
@@ -29,47 +35,60 @@ public class PiratasGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        barcoPiratainf2 = new FondoPanel("/images/pirata.png");
-        javax.swing.JPanel barcoPiratainf5 = new FondoPanel("/images/interceptor.png");
-        barcoPiratainf6 = new FondoPanel("/images/invencible.png");
+        barcoPiratainf = new FondoPanel("/images/pirata.png");
+        javax.swing.JPanel barcoReinainf2 = new FondoPanel("/images/interceptor.png");
+        barcoReinainf = new FondoPanel("/images/invencible.png");
         jMenuBar1 = new javax.swing.JMenuBar();
         iniciar = new javax.swing.JMenu();
         cargar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1300, 768));
+        setMinimumSize(new java.awt.Dimension(1300, 768));
+        setPreferredSize(new java.awt.Dimension(708, 768));
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout barcoPiratainf2Layout = new javax.swing.GroupLayout(barcoPiratainf2);
-        barcoPiratainf2.setLayout(barcoPiratainf2Layout);
-        barcoPiratainf2Layout.setHorizontalGroup(
-            barcoPiratainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout barcoPiratainfLayout = new javax.swing.GroupLayout(barcoPiratainf);
+        barcoPiratainf.setLayout(barcoPiratainfLayout);
+        barcoPiratainfLayout.setHorizontalGroup(
+            barcoPiratainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 158, Short.MAX_VALUE)
         );
-        barcoPiratainf2Layout.setVerticalGroup(
-            barcoPiratainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        barcoPiratainfLayout.setVerticalGroup(
+            barcoPiratainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 240, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout barcoPiratainf5Layout = new javax.swing.GroupLayout(barcoPiratainf5);
-        barcoPiratainf5.setLayout(barcoPiratainf5Layout);
-        barcoPiratainf5Layout.setHorizontalGroup(
-            barcoPiratainf5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        getContentPane().add(barcoPiratainf);
+        barcoPiratainf.setBounds(10, 7, 158, 240);
+
+        javax.swing.GroupLayout barcoReinainf2Layout = new javax.swing.GroupLayout(barcoReinainf2);
+        barcoReinainf2.setLayout(barcoReinainf2Layout);
+        barcoReinainf2Layout.setHorizontalGroup(
+            barcoReinainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 158, Short.MAX_VALUE)
         );
-        barcoPiratainf5Layout.setVerticalGroup(
-            barcoPiratainf5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        barcoReinainf2Layout.setVerticalGroup(
+            barcoReinainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 240, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout barcoPiratainf6Layout = new javax.swing.GroupLayout(barcoPiratainf6);
-        barcoPiratainf6.setLayout(barcoPiratainf6Layout);
-        barcoPiratainf6Layout.setHorizontalGroup(
-            barcoPiratainf6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        getContentPane().add(barcoReinainf2);
+        barcoReinainf2.setBounds(10, 498, 158, 240);
+
+        javax.swing.GroupLayout barcoReinainfLayout = new javax.swing.GroupLayout(barcoReinainf);
+        barcoReinainf.setLayout(barcoReinainfLayout);
+        barcoReinainfLayout.setHorizontalGroup(
+            barcoReinainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 158, Short.MAX_VALUE)
         );
-        barcoPiratainf6Layout.setVerticalGroup(
-            barcoPiratainf6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        barcoReinainfLayout.setVerticalGroup(
+            barcoReinainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 240, Short.MAX_VALUE)
         );
+
+        getContentPane().add(barcoReinainf);
+        barcoReinainf.setBounds(10, 253, 158, 240);
 
         iniciar.setText("Iniciar");
         iniciar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,38 +101,22 @@ public class PiratasGUI extends javax.swing.JFrame {
 
         cargar.setText("Cargar XML");
         jMenuBar1.add(cargar);
-        cargar.getAccessibleContext().setAccessibleParent(null);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(barcoPiratainf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(barcoPiratainf5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(barcoPiratainf6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(540, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(barcoPiratainf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(barcoPiratainf6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(barcoPiratainf5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
+        AnimationClass barcoAnimated = new AnimationClass();
+        JLabel barco = new JLabel();
+        barco.setIcon(new ImageIcon ("C:\\Users\\Toshiba PC\\Documents\\NetBeansProjects\\PiratasUCAB\\src\\images\\barcoPirata.png"));
+        barco.setSize(200, 200);
+        barco.setLocation(200,200);
+        this.add(barco);
+        barcoAnimated.jLabelXRight(200, 1000, 100, 20, barco);
+        barcoAnimated.jLabelYDown(barco.getY(),barco.getY()+200, 100, 2, barco);
     }//GEN-LAST:event_iniciarMouseClicked
 
     /**
@@ -152,9 +155,8 @@ public class PiratasGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel barcoPiratainf2;
-    private javax.swing.JPanel barcoPiratainf4;
-    private javax.swing.JPanel barcoPiratainf6;
+    private javax.swing.JPanel barcoPiratainf;
+    private javax.swing.JPanel barcoReinainf;
     private javax.swing.JMenu cargar;
     private javax.swing.JMenu iniciar;
     private javax.swing.JMenuBar jMenuBar1;
