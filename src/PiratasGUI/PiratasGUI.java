@@ -5,7 +5,6 @@
  */
 package PiratasGUI;
 
-import AppPackage.AnimationClass;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -17,13 +16,23 @@ public class PiratasGUI extends javax.swing.JFrame {
     /**
      * Creates new form PiratasGUI
      */
+//    private Barco labelBarco;
+    private Barco BarcoMovement;
+//    private JLabel labelBarco;
     public PiratasGUI() {
         initComponents();
-
+        /*Ventana*/
+   
         this.setContentPane(new FondoPanel("/images/playa.png"));
         this.setBounds(0, 0, 1366, 768);
-
-//        this.add(barcoPiratainf);
+        
+//        labelBarco = new JLabel();
+//        labelBarco.setIcon(new ImageIcon("C:\\Users\\Toshiba PC\\Documents\\NetBeansProjects\\PiratasUCAB\\src\\images\\barcoPirata.png"));
+//        add(labelBarco);
+//        labelBarco.setLocation(10,10);
+//        labelBarco.setVisible(true);
+        
+        BarcoMovement = new Barco(this);
     }
 
     /**
@@ -109,14 +118,9 @@ public class PiratasGUI extends javax.swing.JFrame {
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
-        AnimationClass barcoAnimated = new AnimationClass();
-        JLabel barco = new JLabel();
-        barco.setIcon(new ImageIcon ("C:\\Users\\Toshiba PC\\Documents\\NetBeansProjects\\PiratasUCAB\\src\\images\\barcoPirata.png"));
-        barco.setSize(200, 200);
-        barco.setLocation(200,200);
-        this.add(barco);
-        barcoAnimated.jLabelXRight(200, 1000, 100, 20, barco);
-        barcoAnimated.jLabelYDown(barco.getY(),barco.getY()+200, 100, 2, barco);
+        this.BarcoMovement.movimiento.start();
+        this.BarcoMovement.iniciar(1);
+
     }//GEN-LAST:event_iniciarMouseClicked
 
     /**
@@ -145,7 +149,6 @@ public class PiratasGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PiratasGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
