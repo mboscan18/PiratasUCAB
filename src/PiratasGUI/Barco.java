@@ -7,8 +7,10 @@ package PiratasGUI;
 
 import AppPackage.AnimationClass;
 import java.awt.Color;
+import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -25,7 +27,10 @@ public class Barco extends javax.swing.JLabel{
         public void run(int caso) {
             while(llegada==0){
                 switch (caso){
-                    case 1: this.moverXDerechaHilo(10, 1000); llegada=1; break;
+                    case 1: this.moverXDerechaHilo(10, 1000); 
+                            llegada=1; 
+                            System.out.print("MAMAWEVADA");
+                            break;
                         
                 }
                 
@@ -41,18 +46,18 @@ public class Barco extends javax.swing.JLabel{
         
     }
         
-    public Barco(PiratasGUI p){
+    public Barco(JPanel p){
         llegada = 0;
         barcoAnimated = new AnimationClass();
-        
+        String filePath = new File("").getAbsolutePath();
         labelBarco = new JLabel();
-        labelBarco.setIcon(new ImageIcon("C:\\Users\\Toshiba PC\\Documents\\NetBeansProjects\\PiratasUCAB\\src\\images\\barcoPirata.png"));
+        labelBarco.setIcon(new ImageIcon(filePath + "\\src\\images\\barcoPirata.png"));
         p.add(labelBarco);
         labelBarco.setLocation(10,10);
         labelBarco.setVisible(true);  
         
         movimiento = new Hilo();
-        
+     //   movimiento.run(1);
     }
     
     public void iniciar(int caso){
@@ -60,10 +65,10 @@ public class Barco extends javax.swing.JLabel{
 
     }
 
-//    public void moverXDerecha(int x, int x1){
-//            movimiento.moverXDerechaHilo(x,x1);
-//        }
-// 
+   public void moverXDerecha(int x, int x1){
+            movimiento.moverXDerechaHilo(x,x1);
+        }
+
 
 }
 

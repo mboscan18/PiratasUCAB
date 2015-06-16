@@ -5,8 +5,11 @@
  */
 package PiratasGUI;
 
+import java.awt.Color;
+import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,12 +21,25 @@ public class PiratasGUI extends javax.swing.JFrame {
      */
 //    private Barco labelBarco;
     private Barco BarcoMovement;
+    private JPanel PanelPrincipal;
 //    private JLabel labelBarco;
     public PiratasGUI() {
         initComponents();
         /*Ventana*/
-   
-        this.setContentPane(new FondoPanel("/images/playa.png"));
+        String filePath = new File("").getAbsolutePath();
+        System.out.print(filePath + "\\src\\images\\playa.png");
+      //  this.PanelPrincipal   setContentPane(new FondoPanel("/images/playa.png"));
+
+        //this.setContentPane(new FondoPanel("/images/playa.png"));
+  
+        PanelPrincipal = new FondoPanel("/images/playa.png");
+        PanelPrincipal.setBounds(170, 0, 1196, 768);
+        
+        add(PanelPrincipal);
+        
+        PanelPrincipal.setVisible(true);
+       // PanelPrincipal.setIcon(new ImageIcon(filePath + "\\src\\images\\playa.png"));
+
         this.setBounds(0, 0, 1366, 768);
         
 //        labelBarco = new JLabel();
@@ -31,8 +47,8 @@ public class PiratasGUI extends javax.swing.JFrame {
 //        add(labelBarco);
 //        labelBarco.setLocation(10,10);
 //        labelBarco.setVisible(true);
-        
-        BarcoMovement = new Barco(this);
+     
+        BarcoMovement = new Barco(PanelPrincipal);
     }
 
     /**
@@ -45,16 +61,17 @@ public class PiratasGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         barcoPiratainf = new FondoPanel("/images/pirata.png");
-        javax.swing.JPanel barcoReinainf2 = new FondoPanel("/images/interceptor.png");
+        barcoReinainf2 = new FondoPanel("/images/interceptor.png");
         barcoReinainf = new FondoPanel("/images/invencible.png");
         jMenuBar1 = new javax.swing.JMenuBar();
         iniciar = new javax.swing.JMenu();
         cargar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1300, 768));
-        setMinimumSize(new java.awt.Dimension(1300, 768));
-        setPreferredSize(new java.awt.Dimension(708, 768));
+        setBackground(new java.awt.Color(0, 153, 255));
+        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(1366, 768));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(null);
 
         javax.swing.GroupLayout barcoPiratainfLayout = new javax.swing.GroupLayout(barcoPiratainf);
@@ -118,8 +135,8 @@ public class PiratasGUI extends javax.swing.JFrame {
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
-        this.BarcoMovement.movimiento.start();
-        this.BarcoMovement.iniciar(1);
+//        this.BarcoMovement.movimiento.start();
+        this.BarcoMovement.moverXDerecha(10,1000);
 
     }//GEN-LAST:event_iniciarMouseClicked
 
@@ -160,6 +177,7 @@ public class PiratasGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barcoPiratainf;
     private javax.swing.JPanel barcoReinainf;
+    private javax.swing.JPanel barcoReinainf2;
     private javax.swing.JMenu cargar;
     private javax.swing.JMenu iniciar;
     private javax.swing.JMenuBar jMenuBar1;
