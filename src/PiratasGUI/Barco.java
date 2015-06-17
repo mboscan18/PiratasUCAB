@@ -8,6 +8,8 @@ package PiratasGUI;
 import AppPackage.AnimationClass;
 import java.awt.Color;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,55 +23,103 @@ public class Barco extends javax.swing.JLabel{
     private JLabel labelBarco;
     public Hilo movimiento;
     private int llegada;
+    private JPanel panel;
+    private int posx, posy, posx1, posy1;
+    private int movX, movY;
+    private String filePath = new File("").getAbsolutePath();
+    private ImageIcon imageBarco = new ImageIcon(filePath + "\\src\\images\\barcoPirata.png");
+    private ImageIcon reverse =  new ImageIcon(filePath + "\\src\\images\\interceptor.png");
 
     class Hilo extends Thread {
+        
+        public Hilo(int x, int y, int x1, int y1){
+            posx = x;
+            posx1 = x1;
+            posy = y;
+            posy1 = y1;
+        }
 
-        public void run(int caso) {
-            while(llegada==0){
-                switch (caso){
-                    case 1: this.moverXDerechaHilo(10, 1000); 
-                            llegada=1; 
-                            System.out.print("MAMAWEVADA");
-                            break;
-                        
-                }
-                
+        public void run() {
+            
+            if(posx1 > posx){
+                movX = 1;   // El punto al que queremos movernos esta a la derecha
+            }else
+            if(posx1 < posx){
+                movX = 2;   // El punto al que queremos movernos esta a la izquierda
+            } 
+            if(posy1 > posy){
+                movY = 1;   // El punto al que queremos movernos esta hacia abajo
+            }else
+            if(posy1 < posy){
+                movY = 2;   // El punto al que queremos movernos esta hacia arriba
             }
+            
+            System.out.println("EMPECE A MOVERME");
+            
+            // MOVIMIENTO EN EL EJE X
+            if(movX == 1){
+                barcoAnimated.jLabelXRight(posx, posx1, 100, 20, labelBarco);   // Se mueve hacia la derecha
+            }else
+            if(movX == 2){
+                barcoAnimated.jLabelXLeft(posx, posx1, 100, 20, labelBarco);    // Se mueve hacia la izquierda
+            }    
+            
+            // MOVIMIENTO EN EL EJE Y
+            if(movY == 1){
+                barcoAnimated.jLabelYDown(posy, posy1, 100, 20, labelBarco);    // Se mueve hacia la abajo
+            }else
+            if(movY == 2){
+                barcoAnimated.jLabelYUp(posy, posy1, 100, 20, labelBarco);      // Se mueve hacia la arriba
+            }
+            int sw=0;
+            while (sw == 0){
+                if((labelBarco.getX() == posx1) && (labelBarco.getY() == posy1)){
+                    sw = 1;
+                }  
+                System.out.print("");
+            }
+            System.out.println("TERMINE DE MOVERME");
+           // labelBarco.setBackground(Color.yellow);
+            
+           // labelBarco.setVisible(false);
+            System.out.println("X nuevo = " + labelBarco.getX());
+            System.out.println("Y nuevo = " + labelBarco.getY());
+            labelBarco.setLocation(labelBarco.getX(), labelBarco.getY());
+            labelBarco.setIcon(reverse);    
+          //  labelBarco.setVisible(true);
+            System.out.println("X nuevo2 = " + labelBarco.getX());
+            System.out.println("Y nuevo2 = " + labelBarco.getY());
         }
-        
-        public void moverXDerechaHilo(int x, int x1){
-            barcoAnimated.jLabelXRight(x, x1, 100, 20, labelBarco);
-            labelBarco.setBackground(Color.yellow);
-            System.out.print("asd");
-            llegada = 1;
-        }
-        
     }
         
     public Barco(JPanel p){
-        llegada = 0;
+        panel = p;
         barcoAnimated = new AnimationClass();
-        String filePath = new File("").getAbsolutePath();
         labelBarco = new JLabel();
-        labelBarco.setIcon(new ImageIcon(filePath + "\\src\\images\\barcoPirata.png"));
-        p.add(labelBarco);
-        labelBarco.setLocation(10,10);
-        labelBarco.setVisible(true);  
-        
-        movimiento = new Hilo();
-     //   movimiento.run(1);
-    }
-    
-    public void iniciar(int caso){
-        movimiento.run(caso);
-
+        labelBarco.setIcon(this.imageBarco);
     }
 
-   public void moverXDerecha(int x, int x1){
-            movimiento.moverXDerechaHilo(x,x1);
-        }
-
-
+   /**
+    * Crea el hilo que realizara el movimiento del barco
+    * 
+    * @param x1 Posicion en el eje X de la pantalla donde el Barco Terminara el movimiento
+    * @param y1 Posicion en el eje Y de la pantalla donde el Barco Terminara el movimiento
+    */
+   public void CrearHilo(int x1, int y1){ 
+       movimiento = new Hilo(labelBarco.getX(),labelBarco.getY(),x1,y1);
+   }
+   
+   /**
+    * Recibe las posicion en la que apararecera el barco e iniciara el movimiento
+    * 
+    * @param x Posicion en el eje X de la pantalla donde el Barco iniciara el movimiento
+    * @param y Posicion en el eje Y de la pantalla donde el Barco iniciara el movimiento
+    */
+   public void AparecerBarco(int x, int y){
+       panel.add(labelBarco);
+       labelBarco.setBounds(x, y, 150, 136);
+       labelBarco.setVisible(true);
+   }
 }
 
 
