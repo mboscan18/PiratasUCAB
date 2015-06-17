@@ -89,7 +89,7 @@ public class Barco extends javax.swing.JLabel{
             
             
             /*Al llegar, evaluar si el sitio tiene una calamaidad. Si tiene, llamar a setCalamidadBarco*/
-            setCalamidadBarco("Kraken");
+            setCalamidadBarco("Tormenta");
             
             
           //  labelBarco.setVisible(true);
