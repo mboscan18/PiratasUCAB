@@ -61,9 +61,34 @@ public class PiratasGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         barcoPiratainf = new FondoPanel("/images/pirata.png");
-        jPanel1 = new javax.swing.JPanel();
+        panelBarcoEstadistica = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        EstadisticaBarco = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         barcoReinainf2 = new FondoPanel("/images/interceptor.png");
+        EstadisticaInterceptor = new javax.swing.JPanel();
+        panelBarcoEstadistica2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         barcoReinainf = new FondoPanel("/images/invencible.png");
+        EstadisticaIInvencible = new javax.swing.JPanel();
+        panelBarcoEstadistica1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         iniciar = new javax.swing.JMenu();
         cargar = new javax.swing.JMenu();
@@ -75,15 +100,130 @@ public class PiratasGUI extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        barcoPiratainf.setMaximumSize(new java.awt.Dimension(158, 240));
+        barcoPiratainf.setMinimumSize(new java.awt.Dimension(158, 240));
+        barcoPiratainf.setPreferredSize(new java.awt.Dimension(158, 240));
+
+        panelBarcoEstadistica.setBackground(new Color(0,0,0,0));
+        panelBarcoEstadistica.setMaximumSize(new java.awt.Dimension(90, 240));
+        panelBarcoEstadistica.setMinimumSize(new java.awt.Dimension(90, 240));
+        panelBarcoEstadistica.setPreferredSize(new java.awt.Dimension(90, 240));
+
+        jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Tripulación:");
+
+        jLabel2.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Municiones:");
+
+        jLabel3.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Comida:");
+
+        jLabel4.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Cofre:");
+
+        javax.swing.GroupLayout panelBarcoEstadisticaLayout = new javax.swing.GroupLayout(panelBarcoEstadistica);
+        panelBarcoEstadistica.setLayout(panelBarcoEstadisticaLayout);
+        panelBarcoEstadisticaLayout.setHorizontalGroup(
+            panelBarcoEstadisticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadisticaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelBarcoEstadisticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        panelBarcoEstadisticaLayout.setVerticalGroup(
+            panelBarcoEstadisticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadisticaLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+
+        EstadisticaBarco.setBackground(new Color(0,0,0,0));
+        EstadisticaBarco.setAlignmentX(0.0F);
+        EstadisticaBarco.setAlignmentY(0.0F);
+        EstadisticaBarco.setMaximumSize(new java.awt.Dimension(68, 240));
+        EstadisticaBarco.setMinimumSize(new java.awt.Dimension(68, 240));
+        EstadisticaBarco.setPreferredSize(new java.awt.Dimension(68, 240));
+
+        jLabel20.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel20.setText("500");
+
+        jLabel21.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel21.setText("Hombres");
+
+        jLabel24.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel24.setText("Unidades");
+
+        jLabel25.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel25.setText("500");
+
+        jLabel26.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel26.setText("Libras");
+
+        jLabel27.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel27.setText("500");
+
+        jLabel28.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel28.setText("Libras");
+
+        jLabel29.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel29.setText("500");
+
+        javax.swing.GroupLayout EstadisticaBarcoLayout = new javax.swing.GroupLayout(EstadisticaBarco);
+        EstadisticaBarco.setLayout(EstadisticaBarcoLayout);
+        EstadisticaBarcoLayout.setHorizontalGroup(
+            EstadisticaBarcoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EstadisticaBarcoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EstadisticaBarcoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        EstadisticaBarcoLayout.setVerticalGroup(
+            EstadisticaBarcoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EstadisticaBarcoLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout barcoPiratainfLayout = new javax.swing.GroupLayout(barcoPiratainf);
@@ -91,48 +231,193 @@ public class PiratasGUI extends javax.swing.JFrame {
         barcoPiratainfLayout.setHorizontalGroup(
             barcoPiratainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barcoPiratainfLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(panelBarcoEstadistica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(EstadisticaBarco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         barcoPiratainfLayout.setVerticalGroup(
             barcoPiratainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(barcoPiratainfLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barcoPiratainfLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(barcoPiratainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelBarcoEstadistica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EstadisticaBarco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         getContentPane().add(barcoPiratainf);
-        barcoPiratainf.setBounds(10, 7, 158, 240);
+        barcoPiratainf.setBounds(10, 4, 158, 240);
+
+        EstadisticaInterceptor.setBackground(new Color(0,0,0,0));
+        EstadisticaInterceptor.setAlignmentX(0.0F);
+        EstadisticaInterceptor.setAlignmentY(0.0F);
+        EstadisticaInterceptor.setMaximumSize(new java.awt.Dimension(68, 240));
+        EstadisticaInterceptor.setMinimumSize(new java.awt.Dimension(68, 240));
+
+        javax.swing.GroupLayout EstadisticaInterceptorLayout = new javax.swing.GroupLayout(EstadisticaInterceptor);
+        EstadisticaInterceptor.setLayout(EstadisticaInterceptorLayout);
+        EstadisticaInterceptorLayout.setHorizontalGroup(
+            EstadisticaInterceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 68, Short.MAX_VALUE)
+        );
+        EstadisticaInterceptorLayout.setVerticalGroup(
+            EstadisticaInterceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+
+        panelBarcoEstadistica2.setBackground(new Color(0,0,0,0));
+        panelBarcoEstadistica2.setMaximumSize(new java.awt.Dimension(90, 240));
+        panelBarcoEstadistica2.setMinimumSize(new java.awt.Dimension(90, 240));
+
+        jLabel9.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("Tripulación:");
+
+        jLabel10.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel10.setText("Municiones:");
+
+        jLabel11.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Comida:");
+
+        jLabel12.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Cofre:");
+
+        javax.swing.GroupLayout panelBarcoEstadistica2Layout = new javax.swing.GroupLayout(panelBarcoEstadistica2);
+        panelBarcoEstadistica2.setLayout(panelBarcoEstadistica2Layout);
+        panelBarcoEstadistica2Layout.setHorizontalGroup(
+            panelBarcoEstadistica2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadistica2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelBarcoEstadistica2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
+        );
+        panelBarcoEstadistica2Layout.setVerticalGroup(
+            panelBarcoEstadistica2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadistica2Layout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
 
         javax.swing.GroupLayout barcoReinainf2Layout = new javax.swing.GroupLayout(barcoReinainf2);
         barcoReinainf2.setLayout(barcoReinainf2Layout);
         barcoReinainf2Layout.setHorizontalGroup(
             barcoReinainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 158, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barcoReinainf2Layout.createSequentialGroup()
+                .addComponent(panelBarcoEstadistica2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(EstadisticaInterceptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         barcoReinainf2Layout.setVerticalGroup(
             barcoReinainf2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(barcoReinainf2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EstadisticaInterceptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(barcoReinainf2Layout.createSequentialGroup()
+                .addComponent(panelBarcoEstadistica2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(barcoReinainf2);
-        barcoReinainf2.setBounds(10, 498, 158, 240);
+        barcoReinainf2.setBounds(10, 490, 158, 240);
+
+        EstadisticaIInvencible.setBackground(new Color(0,0,0,0));
+        EstadisticaIInvencible.setAlignmentX(0.0F);
+        EstadisticaIInvencible.setAlignmentY(0.0F);
+        EstadisticaIInvencible.setMaximumSize(new java.awt.Dimension(68, 240));
+        EstadisticaIInvencible.setMinimumSize(new java.awt.Dimension(68, 240));
+
+        javax.swing.GroupLayout EstadisticaIInvencibleLayout = new javax.swing.GroupLayout(EstadisticaIInvencible);
+        EstadisticaIInvencible.setLayout(EstadisticaIInvencibleLayout);
+        EstadisticaIInvencibleLayout.setHorizontalGroup(
+            EstadisticaIInvencibleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 68, Short.MAX_VALUE)
+        );
+        EstadisticaIInvencibleLayout.setVerticalGroup(
+            EstadisticaIInvencibleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+
+        panelBarcoEstadistica1.setBackground(new Color(0,0,0,0));
+        panelBarcoEstadistica1.setMaximumSize(new java.awt.Dimension(90, 240));
+        panelBarcoEstadistica1.setMinimumSize(new java.awt.Dimension(90, 240));
+
+        jLabel5.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Tripulación:");
+
+        jLabel6.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Municiones:");
+
+        jLabel7.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Comida:");
+
+        jLabel8.setFont(new java.awt.Font("Viner Hand ITC", 0, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Cofre:");
+
+        javax.swing.GroupLayout panelBarcoEstadistica1Layout = new javax.swing.GroupLayout(panelBarcoEstadistica1);
+        panelBarcoEstadistica1.setLayout(panelBarcoEstadistica1Layout);
+        panelBarcoEstadistica1Layout.setHorizontalGroup(
+            panelBarcoEstadistica1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadistica1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelBarcoEstadistica1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
+        );
+        panelBarcoEstadistica1Layout.setVerticalGroup(
+            panelBarcoEstadistica1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarcoEstadistica1Layout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
 
         javax.swing.GroupLayout barcoReinainfLayout = new javax.swing.GroupLayout(barcoReinainf);
         barcoReinainf.setLayout(barcoReinainfLayout);
         barcoReinainfLayout.setHorizontalGroup(
             barcoReinainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 158, Short.MAX_VALUE)
+            .addGroup(barcoReinainfLayout.createSequentialGroup()
+                .addComponent(panelBarcoEstadistica1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(EstadisticaIInvencible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         barcoReinainfLayout.setVerticalGroup(
             barcoReinainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(barcoReinainfLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(barcoReinainfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EstadisticaIInvencible, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelBarcoEstadistica1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         getContentPane().add(barcoReinainf);
-        barcoReinainf.setBounds(10, 253, 158, 240);
+        barcoReinainf.setBounds(10, 247, 158, 240);
 
         iniciar.setText("Iniciar");
         iniciar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -197,12 +482,37 @@ public class PiratasGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel EstadisticaBarco;
+    private javax.swing.JPanel EstadisticaIInvencible;
+    private javax.swing.JPanel EstadisticaInterceptor;
     private javax.swing.JPanel barcoPiratainf;
     private javax.swing.JPanel barcoReinainf;
     private javax.swing.JPanel barcoReinainf2;
     private javax.swing.JMenu cargar;
     private javax.swing.JMenu iniciar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel panelBarcoEstadistica;
+    private javax.swing.JPanel panelBarcoEstadistica1;
+    private javax.swing.JPanel panelBarcoEstadistica2;
     // End of variables declaration//GEN-END:variables
 }
