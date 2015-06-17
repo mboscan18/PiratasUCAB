@@ -48,7 +48,7 @@ public class PiratasGUI extends javax.swing.JFrame {
 //        labelBarco.setLocation(10,10);
 //        labelBarco.setVisible(true);
      
-        BarcoMovement = new Barco(PanelPrincipal);
+        BarcoMovement = new Barco(PanelPrincipal, "Venganza Errante");
     }
 
     /**

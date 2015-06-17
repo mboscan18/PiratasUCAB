@@ -27,8 +27,9 @@ public class Barco extends javax.swing.JLabel{
     private int posx, posy, posx1, posy1;
     private int movX, movY;
     private String filePath = new File("").getAbsolutePath();
-    private ImageIcon imageBarco = new ImageIcon(filePath + "\\src\\images\\barcoPirata.png");
-    private ImageIcon reverse =  new ImageIcon(filePath + "\\src\\images\\interceptor.png");
+    
+    /*Imagenes*/
+    private ImageIcon imageBarco, kraken, tormenta, tornado ;
 
     class Hilo extends Thread {
         
@@ -85,17 +86,53 @@ public class Barco extends javax.swing.JLabel{
             System.out.println("X nuevo = " + labelBarco.getX());
             System.out.println("Y nuevo = " + labelBarco.getY());
             labelBarco.setLocation(labelBarco.getX(), labelBarco.getY());
-            labelBarco.setIcon(reverse);    
+            
+            
+            /*Al llegar, evaluar si el sitio tiene una calamaidad. Si tiene, llamar a setCalamidadBarco*/
+            setCalamidadBarco("Kraken");
+            
+            
           //  labelBarco.setVisible(true);
             System.out.println("X nuevo2 = " + labelBarco.getX());
             System.out.println("Y nuevo2 = " + labelBarco.getY());
         }
+        
+        public void setCalamidadBarco(String calamidad){
+            switch (calamidad){
+               case "Kraken": labelBarco.setIcon(kraken); break;
+               case "Tornado": labelBarco.setIcon(tornado); break;
+               case "Tormenta": labelBarco.setIcon(tormenta); break;    
+           }
+        }
     }
         
-    public Barco(JPanel p){
+    public Barco(JPanel p, String nombreBarco){
         panel = p;
         barcoAnimated = new AnimationClass();
         labelBarco = new JLabel();
+        
+        /*Imagenes*/
+        switch (nombreBarco){
+            case "Venganza Errante":
+                imageBarco = new ImageIcon(filePath + "\\src\\images\\barcoPirata.png");
+                kraken =  new ImageIcon(filePath + "\\src\\images\\barcoPkraken.png");
+                tornado = new ImageIcon(filePath + "\\src\\images\\barcoPtornado.png");
+                tormenta = new ImageIcon(filePath + "\\src\\images\\barcoPtormenta.png");
+                
+                break;
+            case "Interceptor": 
+                imageBarco = new ImageIcon(filePath + "\\src\\images\\interceptorBarco.png");
+                kraken =  new ImageIcon(filePath + "\\src\\images\\intercepkraken.png");
+                tornado = new ImageIcon(filePath + "\\src\\images\\interceptornado.png");
+                tormenta = new ImageIcon(filePath + "\\src\\images\\interceptormenta.png");
+                break;
+            case "Invencible": 
+                imageBarco = new ImageIcon(filePath + "\\src\\images\\invenBarco.png");
+                kraken =  new ImageIcon(filePath + "\\src\\images\\invenkraken.png");
+                tornado = new ImageIcon(filePath + "\\src\\images\\inventornado.png");
+                tormenta = new ImageIcon(filePath + "\\src\\images\\inventormenta.png");
+                break;    
+        }
         labelBarco.setIcon(this.imageBarco);
     }
 
@@ -120,6 +157,7 @@ public class Barco extends javax.swing.JLabel{
        labelBarco.setBounds(x, y, 150, 136);
        labelBarco.setVisible(true);
    }
+   
 }
 
 
