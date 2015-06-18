@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -153,9 +154,27 @@ public class PiratasGUI extends javax.swing.JFrame {
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
-        this.BarcoMovement.AparecerBarco(20, 20);
-        this.BarcoMovement.CrearHilo(20, 300);
-        this.BarcoMovement.movimiento.start();
+        Object[] possibilities = {"ham", "spam", "yam"};
+        String s = (String)JOptionPane.showInputDialog(
+                    this,
+                    "Complete the sentence:\n"
+                    + "\"Green eggs and...\"",
+                    "Customized Dialog",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    possibilities,
+                    "ham");
+
+            //If a string was returned, say so.
+            if ((s != null) && (s.length() > 0)) {
+                JOptionPane.showInputDialog(this,("Green eggs and... " + s + "!"));
+                this.BarcoMovement.AparecerBarco(20, 20);
+                this.BarcoMovement.CrearHilo(20, 300);
+                this.BarcoMovement.movimiento.start();
+            }else{
+                JOptionPane.showInputDialog(this,("Come on, finish the sentence!"));
+            }
+        
        
         //this.BarcoMovement.iniciar(1);
 //        this.BarcoMovement.moverXDerecha(10,1000);
