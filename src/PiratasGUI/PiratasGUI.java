@@ -7,9 +7,6 @@ package PiratasGUI;
 
 import java.awt.Color;
 import java.io.File;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,17 +20,16 @@ public class PiratasGUI extends javax.swing.JFrame {
 //    private Barco labelBarco;
     private Barco BarcoMovement;
     private JPanel PanelPrincipal;
+
 //    private JLabel labelBarco;
     public PiratasGUI() {
         initComponents();
         /*Ventana*/
         String filePath = new File("").getAbsolutePath();
-        System.out.println(filePath + "\\src\\images\\playa.png");
-      //  this.PanelPrincipal   setContentPane(new FondoPanel("/images/playa.png"));
+        System.out.println(filePath + "\\src\\images\\maquina2.png");
 
-        //this.setContentPane(new FondoPanel("/images/playa.png"));
-  
-        PanelPrincipal = new FondoPanel("/images/playa.png");
+        /*Segun la maquina hay que cambiar el fondo*/
+        PanelPrincipal = new FondoPanel("/images/maquina2.png");
         PanelPrincipal.setBounds(170, 0, 1196, 768);
         
         add(PanelPrincipal);
@@ -439,33 +435,11 @@ public class PiratasGUI extends javax.swing.JFrame {
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
-        Object[] possibilities = {"ham", "spam", "yam"};
-        String s = (String)JOptionPane.showInputDialog(
-                    this,
-                    "Complete the sentence:\n"
-                    + "\"Green eggs and...\"",
-                    "Customized Dialog",
-                    JOptionPane.PLAIN_MESSAGE,
-                    null,
-                    possibilities,
-                    "ham");
-
-            //If a string was returned, say so.
-            if ((s != null) && (s.length() > 0)) {
-                JOptionPane.showInputDialog(this,("Green eggs and... " + s + "!"));
-                this.BarcoMovement.AparecerBarco(20, 20);
-                this.BarcoMovement.CrearHilo(20, 300);
-                this.BarcoMovement.movimiento.start();
-            }else{
-                JOptionPane.showInputDialog(this,("Come on, finish the sentence!"));
-            }
-        
-       
-        //this.BarcoMovement.iniciar(1);
-//        this.BarcoMovement.moverXDerecha(10,1000);
-
+        this.BarcoMovement.AparecerBarco(950, 500);
+        this.BarcoMovement.CrearHilo(800,200);   //Revisar
+        this.BarcoMovement.movimiento.start();
     }//GEN-LAST:event_iniciarMouseClicked
-
+/*Lista de String de sitios, leer cada una y setear*/
     /**
      * @param args the command line arguments
      */

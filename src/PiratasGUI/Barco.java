@@ -42,39 +42,46 @@ public class Barco extends javax.swing.JLabel{
 
         public void run() {
             
-            if(posx1 > posx){
+            if(posx1 >= posx){
                 movX = 1;   // El punto al que queremos movernos esta a la derecha
             }else
             if(posx1 < posx){
                 movX = 2;   // El punto al que queremos movernos esta a la izquierda
             } 
-            if(posy1 > posy){
+            if(posy1 >= posy){
                 movY = 1;   // El punto al que queremos movernos esta hacia abajo
             }else
             if(posy1 < posy){
                 movY = 2;   // El punto al que queremos movernos esta hacia arriba
             }
             
-            System.out.println("EMPECE A MOVERME");
+            System.out.println("EMPECE A MOVERME  "+movX +" "+ movY);
             
             // MOVIMIENTO EN EL EJE X
             if(movX == 1){
+                System.out.println("Entre en x1");
                 barcoAnimated.jLabelXRight(posx, posx1, 100, 20, labelBarco);   // Se mueve hacia la derecha
             }else
             if(movX == 2){
+                System.out.println("Entre en x2");
                 barcoAnimated.jLabelXLeft(posx, posx1, 100, 20, labelBarco);    // Se mueve hacia la izquierda
             }    
             
             // MOVIMIENTO EN EL EJE Y
             if(movY == 1){
+                System.out.println("Entre en y1");
                 barcoAnimated.jLabelYDown(posy, posy1, 100, 20, labelBarco);    // Se mueve hacia la abajo
             }else
             if(movY == 2){
+                System.out.println("Entre en y2");
                 barcoAnimated.jLabelYUp(posy, posy1, 100, 20, labelBarco);      // Se mueve hacia la arriba
             }
             int sw=0;
+            System.out.println("\nprime X:"+labelBarco.getX()+"\n"+"Y:"+labelBarco.getY());
             while (sw == 0){
+            //    System.out.println("\nX:"+labelBarco.getX()+"\n"+"Y:"+labelBarco.getY());
                 if((labelBarco.getX() == posx1) && (labelBarco.getY() == posy1)){
+                 
                     sw = 1;
                 }  
                 System.out.print("");
@@ -89,7 +96,7 @@ public class Barco extends javax.swing.JLabel{
             
             
             /*Al llegar, evaluar si el sitio tiene una calamaidad. Si tiene, llamar a setCalamidadBarco*/
-            setCalamidadBarco("Tormenta");
+            setCalamidadBarco("Kraken");
             
             
           //  labelBarco.setVisible(true);
@@ -102,6 +109,7 @@ public class Barco extends javax.swing.JLabel{
                case "Kraken": labelBarco.setIcon(kraken); break;
                case "Tornado": labelBarco.setIcon(tornado); break;
                case "Tormenta": labelBarco.setIcon(tormenta); break;    
+               default:labelBarco.setIcon(imageBarco); break;    
            }
         }
     }
