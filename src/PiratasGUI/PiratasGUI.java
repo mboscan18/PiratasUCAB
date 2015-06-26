@@ -20,7 +20,24 @@ public class PiratasGUI extends javax.swing.JFrame {
 //    private Barco labelBarco;
     private Barco BarcoMovement;
     private JPanel PanelPrincipal;
+    private VentanaRutas rutas;
+    private String destino, destino2;
 
+    public String getDestino() {
+        return destino;
+    }
+
+    public String getDestino2() {
+        return destino2;
+    }
+
+    public void setDestino2(String destino2) {
+        this.destino2 = destino2;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 //    private JLabel labelBarco;
     public PiratasGUI() {
         initComponents();
@@ -38,7 +55,7 @@ public class PiratasGUI extends javax.swing.JFrame {
        // PanelPrincipal.setIcon(new ImageIcon(filePath + "\\src\\images\\playa.png"));
 
         this.setBounds(0, 0, 1366, 768);
-        
+        destino = "";
 //        labelBarco = new JLabel();
 //        labelBarco.setIcon(new ImageIcon("C:\\Users\\Toshiba PC\\Documents\\NetBeansProjects\\PiratasUCAB\\src\\images\\barcoPirata.png"));
 //        add(labelBarco);
@@ -46,6 +63,9 @@ public class PiratasGUI extends javax.swing.JFrame {
 //        labelBarco.setVisible(true);
      
         BarcoMovement = new Barco(PanelPrincipal, "Venganza Errante");
+        rutas = new VentanaRutas(this, false);
+        /*Segun la maquina. Si es 1, es el pirata, si es 2, son los dos barcos reales*/
+        //rutas.setJLabelBarco("Venganza Errante");
     }
 
     /**
@@ -435,9 +455,18 @@ public class PiratasGUI extends javax.swing.JFrame {
 
     private void iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarMouseClicked
         // TODO add your handling code here:
-        this.BarcoMovement.AparecerBarco(950, 500);
-        this.BarcoMovement.CrearHilo(800,200);   //Revisar
-        this.BarcoMovement.movimiento.start();
+        rutas.setVisible(true);
+        /*Cuando la ventana se cierra*/
+        rutas.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                System.out.print(destino);
+                /*Ya obtienes el destino, si es maquina 2 se utilizara el destino2 y destino)*/
+                 BarcoMovement.AparecerBarco(100, 100);
+                 BarcoMovement.CrearHilo(100,500);   //Revisar
+                 BarcoMovement.movimiento.start();
+            }
+        });
     }//GEN-LAST:event_iniciarMouseClicked
 /*Lista de String de sitios, leer cada una y setear*/
     /**
